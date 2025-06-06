@@ -1,4 +1,4 @@
-export const API_URL = "http://ec2-3-16-128-70.us-east-2.compute.amazonaws.com";
+export const API_URL = "https://api.starlightoutdoor.com";
 
 export async function fetchAllProducts() {
   const res = await fetch(`${API_URL}/items/products`);
