@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starlight Outdoor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="./assets/logo/logo_whitev2.png"
+          alt="Starlight Outdoor Logo"
+        />
+      </div>
+      <nav>
+        <ul class="menubar">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about">About</a></li>
+          <li>
+            <a href="./collection">Collection</a>
+            <ul class="submenu">
+              <li><a href="./product.html">Sofa</a></li>
+              <li><a href="./product.html">Sectional</a></li>
+              <li><a href="./product.html">Dining Chairs</a></li>
+              <li><a href="./product.html">Lounge Chairs</a></li>
+              <li><a href="./product.html">Tables</a></li>
+              <li><a href="./product.html">Lounger & Daybeds</a></li>
+              <li><a href="./product.html">Accessories</a></li>
+            </ul>
+          </li>
+          <li><a href="./catalog">Catalog</a></li>
+          <li><a href="./contact">Contact</a></li>
+          <li><a href="./showrooms">Showrooms</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="hero"></div>
+
+    <div class="product-wrapper">
+      <div id="product-image-wrapper" class="swiper">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div id="product-details">
+        <h1 id="product-name"></h1>
+        <div id="product-price"></div>
+        <div class="product-dropdown">
+          <p class="product-dropdown-title">
+            Description<i class="fas fa-chevron-down"></i>
+          </p>
+          <p id="product-description" class="product-dropdown-text active"></p>
+        </div>
+        <div class="product-dropdown" onclick="">
+          <p class="product-dropdown-title">
+            Dimensions
+            <i class="fas fa-chevron-down"></i>
+          </p>
+          <p id="product-dimensions" class="product-dropdown-text"></p>
+        </div>
+        <div class="product-dropdown">
+          <p class="product-dropdown-title">
+            Materials
+            <i class="fas fa-chevron-down"></i>
+          </p>
+          <p id="product-materials" class="product-dropdown-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-menu">
+        <ul>
+          <li>Help</li>
+          <li>Contact Us</li>
+          <li>FAQ</li>
+          <li>Store Policy</li>
+          <li>Returns, Refunds & Claims</li>
+          <li>Product Care</li>
+        </ul>
+        <ul>
+          <li>Discover</li>
+          <li>AR 3D Planner</li>
+          <li>Trade</li>
+          <li>Career</li>
+          <li>Sustainability</li>
+          <li>Membership</li>
+        </ul>
+      </div>
+
+      <div class="hr-divider"></div>
+      <p class="copyright">
+        Copyright © 2025 Starlight Outdoor. All Rights Reserved.
+      </p>
+    </footer>
+    <script type="module" src="./js/product.js"></script>
+    <script
+      src="https://kit.fontawesome.com/94bf3e1a89.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
