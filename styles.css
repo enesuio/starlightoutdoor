@@ -117,6 +117,12 @@ header {
   font-weight: 400;
 }
 
+.notFixed {
+  position: relative;
+  background: none;
+  color: #0a0a0a;
+}
+
 .hero {
   background: center no-repeat url(./assets/hero/hero1.jpg);
   background-size: cover;
@@ -187,6 +193,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  aspect-ratio: 1 / 1;
 }
 
 .mySwiper2 .swiper-slide-thumb-active {
@@ -197,6 +204,7 @@ footer {
   flex-grow: 1;
   width: 100%;
   min-width: 350px;
+  margin-top: 5rem;
 }
 
 #product-name {
@@ -285,6 +293,20 @@ footer {
   width: max-content;
   top: 105%;
   border-radius: 0 0 5px 5px;
+}
+
+.scrollUp {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: #0a0a0a;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.fa-arrow-up {
+  color: #f0f0f0;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 760px) {

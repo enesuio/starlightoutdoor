@@ -38,10 +38,6 @@ async function renderProductPage() {
   const swiperWrapper2 = document.querySelector(".thumbs");
   swiperWrapper2.innerHTML = "";
 
-  // ENES UPDATE Thumbnails
-
-  // ENES UPDATE END
-
   if (product.images?.length > 0) {
     product.images.forEach((image) => {
       const slide = document.createElement("div");
@@ -65,10 +61,10 @@ async function renderProductPage() {
       swiperWrapper2.appendChild(slide);
     });
 
-    // ✅ Initialize Swipers AFTER slides are inserted
+    // Initialize Swipers AFTER slides are inserted
     const thumbSwiper = new Swiper(".mySwiper2", {
       spaceBetween: 10,
-      slidesPerView: 4,
+      slidesPerView: 8,
       freeMode: true,
       watchSlidesProgress: true,
       navigation: {

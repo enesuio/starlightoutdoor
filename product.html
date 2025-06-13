@@ -14,8 +14,8 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <header>
+  <body id="scroll-up">
+    <header class="notFixed">
       <div class="logo">
         <img
           src="./assets/logo/logo_whitev2.png"
@@ -44,8 +44,6 @@
         </ul>
       </nav>
     </header>
-    <div class="hero"></div>
-
     <div class="product-wrapper">
       <div class="product-assets">
         <div class="swiper mySwiper1">
@@ -56,13 +54,7 @@
         </div>
 
         <div class="swiper mySwiper2">
-          <div class="swiper-wrapper thumbs">
-            <div class="swiper-slide">1</div>
-            <div class="swiper-slide">2</div>
-            <div class="swiper-slide">3</div>
-            <div class="swiper-slide">4</div>
-            <div class="swiper-slide">5</div>
-          </div>
+          <div class="swiper-wrapper thumbs"></div>
           <div class="swiper-button-prev-thumb"></div>
           <div class="swiper-button-next-thumb"></div>
           <div class="swiper-pagination-thumb"></div>
@@ -75,7 +67,7 @@
           <p class="product-dropdown-title">
             Description<i class="fas fa-chevron-down"></i>
           </p>
-          <p id="product-description" class="product-dropdown-text active"></p>
+          <p id="product-description" class="product-dropdown-text"></p>
         </div>
         <div class="product-dropdown" onclick="">
           <p class="product-dropdown-title">
@@ -119,6 +111,9 @@
         Copyright © 2025 Starlight Outdoor. All Rights Reserved.
       </div>
     </footer>
+    <div class="scrollUp">
+      <a href="#scroll-up"><i class="fas fa-arrow-up"></i></a>
+    </div>
     <script type="module" src="./js/product.js"></script>
     <script type="module" src="./js/main.js"></script>
     <script
