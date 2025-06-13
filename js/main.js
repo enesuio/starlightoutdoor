@@ -11,3 +11,14 @@ function updateHeaderOnScroll() {
 
 window.addEventListener("scroll", updateHeaderOnScroll);
 window.addEventListener("DOMContentLoaded", updateHeaderOnScroll);
+
+// FAQ Section
+
+function updateFaqq(event) {
+  const answer = event.currentTarget.querySelector("p");
+  answer.classList.toggle("visible");
+  event.currentTarget.querySelector("i").classList.toggle("rotated")
+}
+
+const faqq = document.querySelectorAll(".faqq");
+faqq.forEach((faqq) => faqq.addEventListener("click", updateFaqq));

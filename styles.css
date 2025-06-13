@@ -110,11 +110,11 @@ header {
 .menubar {
   display: flex;
   gap: 4rem;
-  border-top: 1px solid white;
-  padding: 1rem;
-  margin: auto;
+  border-top: 1px solid black;
+  margin: 1rem 0;
   font-size: 1.2rem;
   font-weight: 400;
+  padding: 0.5rem 0;
 }
 
 .notFixed {
@@ -158,9 +158,9 @@ footer {
   color: #f0f0f0;
 }
 
-/* Product Page */
+/* Product Section */
 
-.product-wrapper {
+.product {
   display: flex;
   gap: 2rem;
   max-width: 1400px;
@@ -239,7 +239,7 @@ footer {
   position: relative;
 }
 
-.fa-chevron-down {
+.product .fa-chevron-down {
   position: absolute;
   right: 10px;
   top: 4px;
@@ -285,7 +285,6 @@ footer {
 }
 
 .submenu {
-  background-color: #f0f0f0;
   color: #0a0a0a;
   padding: 1rem;
   display: none;
@@ -293,6 +292,8 @@ footer {
   width: max-content;
   top: 105%;
   border-radius: 0 0 5px 5px;
+  background: linear-gradient(145deg, #f0f0f0, #dadada);
+  box-shadow: 12px 12px 20px #9f9f9f;
 }
 
 .scrollUp {
@@ -309,8 +310,59 @@ footer {
   font-size: 1.5rem;
 }
 
+/* FAQ Section */
+
+.faq {
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1400px;
+  gap: 2rem;
+}
+
+.faq-left {
+  flex: 1;
+}
+
+.faq-left h2 {
+  font-size: 2rem;
+  color: #0a0a0a;
+}
+
+.faq-right {
+  flex: 1;
+}
+
+.faqq {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #9f9f9f;
+  position: relative;
+}
+
+.faqq .fa-chevron-down {
+  position: absolute;
+  right: 10px;
+  transition: transform 0.5s;
+}
+
+.rotated {
+  transform: rotate(-180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.visible {
+  max-height: max-content;
+}
+
 @media screen and (max-width: 760px) {
-  .product-wrapper {
+  .product {
     display: block;
   }
 }
