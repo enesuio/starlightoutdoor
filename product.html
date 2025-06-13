@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -22,7 +26,7 @@
         <ul class="menubar">
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about">About</a></li>
-          <li>
+          <li class="hasSubmenu">
             <a href="./collection">Collection</a>
             <ul class="submenu">
               <li><a href="./product.html">Sofa</a></li>
@@ -43,11 +47,26 @@
     <div class="hero"></div>
 
     <div class="product-wrapper">
-      <div id="product-image-wrapper" class="swiper">
-        <div class="swiper-wrapper"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
+      <div class="product-assets">
+        <div class="swiper mySwiper1">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper thumbs">
+            <div class="swiper-slide">1</div>
+            <div class="swiper-slide">2</div>
+            <div class="swiper-slide">3</div>
+            <div class="swiper-slide">4</div>
+            <div class="swiper-slide">5</div>
+          </div>
+          <div class="swiper-button-prev-thumb"></div>
+          <div class="swiper-button-next-thumb"></div>
+          <div class="swiper-pagination-thumb"></div>
+        </div>
       </div>
       <div id="product-details">
         <h1 id="product-name"></h1>
@@ -75,6 +94,7 @@
       </div>
     </div>
 
+    <div class="hr-divider"></div>
     <footer>
       <div class="footer-menu">
         <ul>
@@ -95,12 +115,12 @@
         </ul>
       </div>
 
-      <div class="hr-divider"></div>
-      <p class="copyright">
+      <div class="copyright">
         Copyright © 2025 Starlight Outdoor. All Rights Reserved.
-      </p>
+      </div>
     </footer>
     <script type="module" src="./js/product.js"></script>
+    <script type="module" src="./js/main.js"></script>
     <script
       src="https://kit.fontawesome.com/94bf3e1a89.js"
       crossorigin="anonymous"
