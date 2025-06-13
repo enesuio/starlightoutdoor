@@ -103,6 +103,7 @@ async function renderProductPage() {
 }
 
 // Product Collapsible Info
+// Product Collapsible Info
 const productDropdown = document.querySelectorAll(".product-dropdown-title");
 productDropdown.forEach((dropdown) =>
   dropdown.addEventListener("click", () => toggleDropdown(dropdown))
