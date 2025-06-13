@@ -6,7 +6,6 @@ let productSwiper;
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     await renderProductPage();
-    initSwiper();
   } catch (error) {
     console.error("Error initializing product page:", error);
     alert("Failed to load product. Please try again later.");
@@ -36,52 +35,78 @@ async function renderProductPage() {
   const swiperWrapper = document.querySelector(".swiper-wrapper");
   swiperWrapper.innerHTML = "";
 
+  const swiperWrapper2 = document.querySelector(".thumbs");
+  swiperWrapper2.innerHTML = "";
+
+  // ENES UPDATE Thumbnails
+
+  // ENES UPDATE END
+
   if (product.images?.length > 0) {
     product.images.forEach((image) => {
       const slide = document.createElement("div");
       slide.className = "swiper-slide";
-
       const img = document.createElement("img");
       img.src = `${API_URL}/assets/${image.directus_files_id}`;
       img.alt = image.title || product.name || "Product Image";
       img.loading = "lazy";
-
       slide.appendChild(img);
       swiperWrapper.appendChild(slide);
     });
-  } else {
-    // Fallback if no images
-    const slide = document.createElement("div");
-    slide.className = "swiper-slide";
-    slide.textContent = "No images available";
-    swiperWrapper.appendChild(slide);
+
+    product.images.forEach((image) => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide";
+      const img = document.createElement("img");
+      img.src = `${API_URL}/assets/${image.directus_files_id}`;
+      img.alt = image.title || product.name || "Product Image";
+      img.loading = "lazy";
+      slide.appendChild(img);
+      swiperWrapper2.appendChild(slide);
+    });
+
+    // ✅ Initialize Swipers AFTER slides are inserted
+    const thumbSwiper = new Swiper(".mySwiper2", {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+      navigation: {
+        nextEl: ".swiper-button-next-thumb",
+        prevEl: ".swiper-button-prev-thumb",
+      },
+      pagination: {
+        el: ".swiper-pagination-thumb",
+        clickable: true,
+      },
+    });
+
+    productSwiper = new Swiper(".mySwiper1", {
+      direction: "horizontal",
+      loop: true,
+      spaceBetween: 20,
+      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: thumbSwiper,
+      },
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 1 },
+        1024: { slidesPerView: 1 },
+      },
+    });
   }
 }
 
-function initSwiper() {
-  productSwiper = new Swiper("#product-image-wrapper", {
-    direction: "horizontal",
-    loop: true,
-    spaceBetween: 20,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      640: { slidesPerView: 1 },
-      768: { slidesPerView: 1 },
-      1024: { slidesPerView: 1 },
-    },
-  });
-}
-
-// Product Collapsible
-
+// Product Collapsible Info
 const productDropdown = document.querySelectorAll(".product-dropdown-title");
 productDropdown.forEach((dropdown) =>
   dropdown.addEventListener("click", () => toggleDropdown(dropdown))

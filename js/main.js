@@ -1,23 +1,13 @@
-import { fetchAllProducts, fetchProductBySlug } from "./api.js";
-import { renderProductCard, renderProductDetail } from "./render.js";
+// Update header background on scroll to increase visibility
+function updateHeaderOnScroll() {
+  const header = document.querySelector("header");
 
-const isProductPage = window.location.pathname.includes("product.html");
-
-if (isProductPage) {
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug");
-
-  if (slug) {
-    fetchProductBySlug(slug).then((product) => {
-      document.getElementById("product-detail").innerHTML =
-        renderProductDetail(product);
-    });
+  if (window.scrollY > window.innerHeight - header.clientHeight) {
+    header.classList.add("scrolled");
   } else {
-    document.getElementById("product-detail").innerHTML = "Product not found.";
+    header.classList.remove("scrolled");
   }
-} else {
-  fetchAllProducts().then((products) => {
-    const container = document.getElementById("product-list");
-    container.innerHTML = products.map(renderProductCard).join("");
-  });
 }
+
+window.addEventListener("scroll", updateHeaderOnScroll);
+window.addEventListener("DOMContentLoaded", updateHeaderOnScroll);
