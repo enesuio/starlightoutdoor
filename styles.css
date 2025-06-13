@@ -188,18 +188,11 @@ footer {
 }
 
 .mySwiper1 {
-.product-assets {
-  flex-grow: 2;
-  max-width: 900px;
-}
-
-.mySwiper1 {
   height: 70vh;
   margin-bottom: 20px;
   margin-bottom: 20px;
 }
 
-.mySwiper1 .swiper-slide {
 .mySwiper1 .swiper-slide {
   display: flex !important;
   justify-content: center;
@@ -282,7 +275,6 @@ footer {
   position: relative;
 }
 
-.menubar a {
 .hasSubmenu {
   position: relative;
 }
@@ -291,21 +283,6 @@ footer {
   position: relative;
 }
 
-.menubar a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 3px;
-  background-color: #0a0a0a;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: all 0.3s;
-}
-
-.menubar a:hover::after {
-  transform: scaleX(1);
 .menubar a::after {
   content: "";
   position: absolute;
