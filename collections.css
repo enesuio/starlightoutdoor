@@ -1,0 +1,230 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: "DM-sans", sans-serif;
+  overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  all: unset;
+}
+
+/* Header Section */
+
+.logo {
+  background-color: ;
+  padding: 1rem;
+}
+
+/* Main Section */
+
+.collection-image {
+  box-shadow: 0px 20px 20px rgba(175, 175, 175, 0.9);
+  position: relative;
+  border-top: 2px solid black;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #f0f0f0;
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
+}
+
+.collection-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: url("./assets/hero/hero12.jpg") no-repeat center center / cover;
+  filter: brightness(80%) blur(1px);
+}
+
+.collection-banner {
+  backdrop-filter: blur(2px);
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.collection-image h1,
+.collection-image p {
+  z-index: 2;
+}
+
+.collection-image p {
+  font-size: 1rem;
+  -webkit-text-stroke: 0;
+}
+
+.product-card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 3rem 1rem;
+}
+
+.product-card {
+  background-color: rgb(248, 248, 248);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 12px 12px 12px rgba(220, 220, 220, 0.9);
+}
+
+.product-image {
+  object-fit: cover;
+}
+
+.product-name {
+  font-size: 1rem;
+  margin: 1rem 1rem 0.5rem;
+}
+
+.product-price {
+  font-weight: 600;
+  margin: 0 1rem 0.5rem;
+}
+
+.product-card-button {
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 5px;
+}
+
+/* Footer Section */
+
+.footer-menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+
+.footer-menu li:first-of-type {
+  font-weight: 800;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 500;
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  border-radius: 5px 5px 0 0;
+}
+
+.copyright span {
+  font-size: 0.7rem;
+  line-height: 2rem;
+}
+
+.fa-heart {
+  color: red;
+}
+
+/* Scroll Up Button */
+
+.scroll-up {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 2px solid black;
+}
